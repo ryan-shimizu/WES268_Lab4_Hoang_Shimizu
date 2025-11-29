@@ -1,0 +1,33 @@
+
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section[Phase Estimation Using PLL]
+{Part 1: Phase Estimation Using PLL}
+\subsection{Manual PLL}
+\hspace*{1.5em}\textbf{1. - } 
+{No narrative required for this section.}
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1a.png}
+   \caption{1.1 - Output of Phase Detector with Freq. Offset = 0Hz, Bandwidth = 2, Noise = 0}
+\end{figure}
+
+% Write-Up section
+\subsection{Write-Up}
+\subsubsection{}
+\textit{Qualitatively explain the results of experiments using the manual PLL with
+respect to the loop-filter bandwidth, the amount of noise, and the speed of the
+loop's response.}
+
+
+\noindent\textbf{Answer.}  
+With a wide loop filter the VCO sees plenty of low-frequency gain, so it wipes
+out frequency error almost immediately.  The downside is that the same wide
+band lets noise into the loop, and even moderate noise (\(\sigma \approx 0.2\))
+makes the phase jitter and can break lock.  A narrow filter quiets the noise
+and keeps the phase steady, but the VCO now moves more slowly, so pull-in takes
+longer, especially when the initial offset is large.  In short, wide bandwidth
+is fast but jittery, while narrow bandwidth is slow but steady.
+
+
+\end{document}
