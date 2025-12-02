@@ -1,33 +1,171 @@
 
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\section[Phase Estimation Using PLL]
-{Part 1: Phase Estimation Using PLL}
-\subsection{Manual PLL}
-\hspace*{1.5em}\textbf{1. - } 
-{No narrative required for this section.}
+\section[Channel Estimation using a PN Sequence]
+{Part 1: Channel Estimation using a PN Sequence}
+\subsection{Impulse Response Estimation of a Multipath Channel}
+\subsubsection{Basic Measurements}
+\hspace*{1.5em}\textbf{5. - }
+{Insert}
+\newline
+\hspace*{1.5em}\textbf{6. - }
 \begin{figure}[H]
    \centering
-   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1a.png}
-   \caption{1.1 - Output of Phase Detector with Freq. Offset = 0Hz, Bandwidth = 2, Noise = 0}
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_1_56.png}
+   \caption{1.1.1.5/6 - Frequency at DC Component and PN sequence spectrum}
 \end{figure}
+
+\noindent\hspace*{1.5em}\textbf{7/8. - } 
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_1_78.png}
+   \caption{1.1.1.7/8 - Period of Delta spikes of autocorrelation graph}
+\end{figure}
+\hspace*{1.5em}\textbf{9/10. - } 
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_1_10_freqlock.png}
+   \caption{1.1.1.9/10 - Period of Delta spikes of autocorrelation graph}
+\end{figure}
+{Insert}
+
+\subsubsection{Fading Measurements and Equalization}
+\hspace*{1.5em}\textbf{2. - }
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_2_2.png}
+   \caption{1.1.2.2 - Gains of Direct and Echo Path Terms}
+\end{figure}
+{Insert}
+\newline
+\hspace*{1.5em}\textbf{3. - } 
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_2_34_GOATED.png}
+   \caption{1.1.2.3 - Gains of Direct and Echo Path Terms using fading paragrameters at receiver}
+\end{figure}
+\noindent\hspace*{1.5em}\textbf{4. - } 
+{Insert}
+\newline
+\hspace*{1.5em}\textbf{5a. - } 
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_2_5a2.png}
+   \caption{1.1.2.5a - Gains of Direct and Echo Path Terms, PN Order of 6}
+\end{figure}
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_2_5a3.png}
+   \caption{1.1.2.5a - Gains of Path Terms using transmitter fading parameters, PN Order of 6}
+\end{figure}
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_2_5a4_check.png}
+   \caption{1.1.2.5a - Gains of Path Terms using measured fading parameters, PN Order of 6}
+\end{figure}
+\noindent\hspace*{1.5em}\textbf{5b. - } 
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_2_5b2.png}
+   \caption{1.1.2.5b - Gains of Direct and Echo Path Terms, PN Order of 7}
+\end{figure}
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{../lab_ss/p1_1_2_5b34.png}
+   \caption{1.1.2.5b - Gains of Path Terms using transmitter fading parameters, PN Order of 7}
+\end{figure}
+\noindent\hspace*{1.5em}\textbf{6. - } 
+{Insert}
+\newline
+\hspace*{1.5em}\textbf{7. - } 
+{Insert}
+\newline
+\hspace*{1.5em}\textbf{8. - } 
+{Insert}
+\newline
 
 % Write-Up section
 \subsection{Write-Up}
 \subsubsection{}
-\textit{Qualitatively explain the results of experiments using the manual PLL with
-respect to the loop-filter bandwidth, the amount of noise, and the speed of the
-loop's response.}
+\textit{Describe how you would create an FIR approximation of the equalization filter $g(n)$ denoted
+g(n). Assuming the following H(z):
+\newline
+$$H(z) = 1 + Az^{-T}$$
+$$G(z) = \frac{1}{1 + Az^{-T}}$$
+You may assume that $|A| < 1$, and $T$ is a positive integer. Hint: What can you say about
+$g(n)$ for large values of $n > N$.
+}
 
 
 \noindent\textbf{Answer.}  
-With a wide loop filter the VCO sees plenty of low-frequency gain, so it wipes
-out frequency error almost immediately.  The downside is that the same wide
-band lets noise into the loop, and even moderate noise (\(\sigma \approx 0.2\))
-makes the phase jitter and can break lock.  A narrow filter quiets the noise
-and keeps the phase steady, but the VCO now moves more slowly, so pull-in takes
-longer, especially when the initial offset is large.  In short, wide bandwidth
-is fast but jittery, while narrow bandwidth is slow but steady.
+Insert
+\newline\newline
+\textit{Now, for values $A = 0.5$ and $T = 4$, find a $\hat{g}(n)$.}
+\newline
+\noindent\textbf{Answer.}  
+Insert
 
+\subsubsection{}
+\textit{
+Based on your observations from this lab, describe the relationship between invertibility of
+a channel $H(z)$ in respect to its poles and/or zero locations. In other words, what kind of
+channels $h[n]$ are invertible (i.e. does a causal equalizer filter $g[n]$ exist?) and non-invertible?
+}
+\newline
+\noindent\textbf{Answer.}  
+Insert
+
+\subsubsection{}
+\textit{
+a) Suppose that we wish to estimate the channel using a particular training sequence called the
+"WES" sequence. All you know about this code is that it has very good auto-correlation
+properties $ \Sigma w(k)w^{*}(n + k) = \delta(n)$ and the following quasi-periodic property:
+$$w(n) = \begin{cases}
+w(n+mL) & 0 \leq m \leq 9,\\
+0  & \text{otherwise}
+\end{cases}$$
+Effectively, the "WES" sequence is a length $L$ sequence that repeats itself 10 times. Now,
+assuming the input to your receiver is the "WES" sequence $w(n)$ with a frequency offset of
+$f_0$
+$$x(n) = w(n)e^{j2\pi f_0 n}$$
+Find the cross-correlation between the received sequence $x(n)$ and the "WES" sequence
+$w(n)$, denoted $r_{xw}(n)$
+$$r_{xw}(n) = \sum_{k} x(n + k) w^{*}(k)$$
+for values of $n = \{0, L, . . . , 9L\}$, you may assume that the term A is a constant where
+$$A = \sum_{k} |w(k)|^2e^{j2\pi f_0 k}$$
+}
+\newline
+\noindent\textbf{Answer.}  
+Insert
+\newline\newline
+
+
+\noindent\textit{
+b) Using your calculation of $r(0)$, and the fact that $|w(k)|^2 = 1$, comment on the effect that
+frequency offset has on the magnitude of the cross-correlation.
+}
+\newline
+\noindent\textbf{Answer.}  
+Insert
+\newline\newline
+
+\noindent\textit{
+c) Explain how you would calculate the frequency offset from your calculated values of
+$r_{xw}(mL)$.
+}
+\newline
+\noindent\textbf{Answer.}  
+Insert
+\newline\newline
+
+
+\noindent\textit{
+d) What is the maximum frequency offset $f_{max}$ that can be tracked using the cross-correlation approach and the "WES" code $w(n)$ of length $L$ (Hint: Think of the nyquist
+sampling theorem).
+}
+\newline
+\noindent\textbf{Answer.}  
+Insert
+\newline\newline
 
 \end{document}
